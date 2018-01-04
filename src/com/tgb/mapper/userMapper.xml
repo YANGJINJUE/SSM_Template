@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	namespace：必须与对应的接口全类名一致
+	id:必须与对应接口的某个对应的方法名一致
+	
+ -->
+<mapper namespace="com.tgb.mapper.UserMapper">
+	
+	<insert id="save" parameterType="User">
+		insert into t_user(user_name,user_age) values(#{userName},#{age})
+	</insert>
+	
+	<update id="update" parameterType="User">
+		update t_user set user_name=#{userName},user_age=#{age} where user_id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from t_user where user_id=#{id}
+	</delete>
+	
+	 <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->  
+	<select id="findById" parameterType="int" resultType="User">
+		select user_id id,user_name userName,user_age age from t_user where user_id=#{id}
+	</select>
+	
+	<select id="findAll" resultType="User">
+		select user_id id,user_name userName,user_age age from t_user
+	</select>
+	
+	<!--使用mybatis高级关联标签  -->
+	<select id="selectMaterial" resultType="com.tgb.model.Material">
+		select * from material where tool_id=#{id}
+	</select>
+	<resultMap type="Tool" id="toolMap">
+		<id column="id" property="id"/>
+		<collection property="materialList" column="id" select="selectMaterial" ofType="com.tgb.model.Material"></collection>
+	</resultMap>
+	<select id="selectTool" parameterType="int" resultMap="toolMap">
+		select * from tool where user_id=#{id}
+		<!--这里的#{}中的内容可以任意指定code,id等。。。合法标识符号  -->
+	</select>
+	
+	<resultMap type="User" id="userMap">
+		<!-- 这里的id标签，这里的property可以随便命名，表示用这个字段去关联下面这个工具表，当中的column必须是过来关联我们这个map，的那个表(t_user)里存在的一个字段-->
+		<id column="user_id" property="code"/><!-- 不指定看效果-->
+		<!--  这里的collection中的列column必须是select中那个表(Tool)中存在的一个数据库字段。-->
+		<collection property="toolList"  select="selectTool" column="id" ofType="Tool"></collection>
+	</resultMap>
+	<select id="findUserAndTool" parameterType="int" resultMap="userMap">
+		select user_id id,user_name userName,user_age age from t_user where user_id=#{id}
+	</select>
+	
+</mapper>
