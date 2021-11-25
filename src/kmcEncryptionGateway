@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-25T07:44:16.595Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="kpMpoXrnIJ770iEJbzGJ" version="15.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-25T07:44:38.683Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="p5TFrWNSwSwGCAJd9WT2" version="15.7.4" type="github">
   <diagram id="wuEcJhDU_6hMuDbacBbQ" name="Page-1">
     <mxGraphModel dx="946" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -16,7 +16,7 @@
         <mxCell id="bR-gOmzZDhbRDUTNxM_2-4" value="应用" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="280" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bR-gOmzZDhbRDUTNxM_2-5" value="加密网关" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="bR-gOmzZDhbRDUTNxM_2-5" value="高可用加密网关" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="280" y="58" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="bR-gOmzZDhbRDUTNxM_2-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bR-gOmzZDhbRDUTNxM_2-4">
